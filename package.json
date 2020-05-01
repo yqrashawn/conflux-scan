@@ -11,7 +11,9 @@
     "lintfix": "eslint . --fix",
     "lint:eslint": "eslint --ignore-path .eslintignore --fix",
     "eslint-check": "eslint --print-config . | eslint-config-prettier-check",
-    "serve:dev": "NODE_ENV=development API_HOST=http://testnet-jsonrpc.conflux-chain.org:18084/api SERVER_PORT=3000 SERVER_HOST=127.0.0.1 SERVER_PREFIX=/proxy node ./service/index.js"
+    "serve:dev": "NODE_ENV=development API_HOST=http://testnet-jsonrpc.conflux-chain.org:18084/api SERVER_PORT=3000 SERVER_HOST=127.0.0.1 SERVER_PREFIX=/proxy node ./service/index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "keywords": [],
   "author": "Angelia",
@@ -56,7 +58,8 @@
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.87.1",
     "styled-components": "^4.2.0",
-    "superagent": "^5.0.5"
+    "superagent": "^5.0.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -97,5 +100,6 @@
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
-  }
+  },
+  "snyk": true
 }
